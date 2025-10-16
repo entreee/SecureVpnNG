@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Certificates for Google Fonts provider (Downloadable Fonts) -->
+    <array name="com_google_android_gms_fonts_certs">
+        <item>@array/com_google_android_gms_fonts_certs_dev</item>
+        <item>@array/com_google_android_gms_fonts_certs_prod</item>
+    </array>
+
+    <!-- Development certificates -->
+    <string-array name="com_google_android_gms_fonts_certs_dev">
+        <item>
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAw3oISo8P9mNf5kQf0Xv3QbJtLkFZ2p8gXWfR3m8pO7NQmVd7T3k8D8cFv0c3n9uFv9qvL5nQp4C9b2KJY8lNbF4lD0mNwV5G7V4yU0L1pY0E2w1rO0L2v3Qd3w9M8M0p2JcJfpcVtWb2vYxY6tN4HcH5Zl9tO1Q3L2oVxF6vN2gM1tG3T4aWzYvL2xY5CwIDAQAB
+        </item>
+    </string-array>
+
+    <!-- Production certificates -->
+    <string-array name="com_google_android_gms_fonts_certs_prod">
+        <item>
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApO7dWb2v7bJz2lP7hW6vY0k3Qy1M9L8cU4wV0mO6pX2nQy3vB5Zl7wM3Q9cN1pO4kY3V2mP7yK8bF1wQ3lT4zM7wN0p1Y2vL5oW9nQy4kZ7pX2tM5vQwIDAQAB
+        </item>
+    </string-array>
+</resources>

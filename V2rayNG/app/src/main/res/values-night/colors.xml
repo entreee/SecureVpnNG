@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="color_fab_active">#f97910</color>
-    <color name="color_fab_inactive">#646464</color>
-    <color name="color_secondary">#BDBDBD</color>
-    <color name="divider_color_light">#424242</color>
+    <!-- Secure.VPN brand palette (night) -->
+    <color name="color_fab_active">#00FF99</color>
+    <color name="color_fab_inactive">#CCCCCC</color>
+    <color name="color_secondary">#CCCCCC</color>
+    <color name="divider_color_light">#2C3035</color>
 
-    <color name="colorPrimary">#212121</color>
-    <color name="colorAccent">#FFFFFF</color>
+    <!-- Primary/Accent for dark-only theme -->
+    <color name="colorPrimary">#212529</color>
+    <color name="colorAccent">#00FF99</color>
+
+    <!-- Brand colors -->
+    <color name="bg_dark">#212529</color>
+    <color name="my_neon_green">#00FF99</color>
+    <color name="my_neon_green_dark">#00CC7A</color>
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#CCCCCC</color>
 </resources>
