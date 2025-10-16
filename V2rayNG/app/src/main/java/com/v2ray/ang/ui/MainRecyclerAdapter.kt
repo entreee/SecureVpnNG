@@ -38,14 +38,7 @@ class MainRecyclerAdapter(val activity: MainActivity) : RecyclerView.Adapter<Mai
     }
 
     private var mActivity: MainActivity = activity
-    private val share_method: Array<out String> by lazy {
-        mActivity.resources.getStringArray(R.array.share_method)
-    }
-    private val share_method_more: Array<out String> by lazy {
-        mActivity.resources.getStringArray(R.array.share_method_more)
-    }
     var isRunning = false
-    private val doubleColumnDisplay = MmkvManager.decodeSettingsBool(AppConfig.PREF_DOUBLE_COLUMN_DISPLAY, false)
 
     /**
      * Gets the total number of items in the adapter (servers count + footer view)
@@ -57,16 +50,15 @@ class MainRecyclerAdapter(val activity: MainActivity) : RecyclerView.Adapter<Mai
         if (holder is MainViewHolder) {
             val guid = mActivity.mainViewModel.serversCache[position].guid
             val profile = mActivity.mainViewModel.serversCache[position].profile
-            val isCustom = profile.configType == EConfigType.CUSTOM
 
             holder.itemView.setBackgroundColor(Color.TRANSPARENT)
 
-            //Name address
+            // Name and address
             holder.itemMainBinding.tvName.text = profile.remarks
             holder.itemMainBinding.tvStatistics.text = getAddress(profile)
             holder.itemMainBinding.tvType.text = profile.configType.name
 
-            //TestResult
+            // TestResult
             val aff = MmkvManager.decodeServerAffiliationInfo(guid)
             holder.itemMainBinding.tvTestResult.text = aff?.getTestDelayString().orEmpty()
             if ((aff?.testDelayMillis ?: 0L) < 0L) {
@@ -75,52 +67,19 @@ class MainRecyclerAdapter(val activity: MainActivity) : RecyclerView.Adapter<Mai
                 holder.itemMainBinding.tvTestResult.setTextColor(ContextCompat.getColor(mActivity, R.color.colorPing))
             }
 
-            //layoutIndicator
+            // layoutIndicator
             if (guid == MmkvManager.getSelectServer()) {
                 holder.itemMainBinding.layoutIndicator.setBackgroundResource(R.color.colorAccent)
             } else {
                 holder.itemMainBinding.layoutIndicator.setBackgroundResource(0)
             }
 
-            //subscription remarks
+            // subscription remarks
             val subRemarks = getSubscriptionRemarks(profile)
             holder.itemMainBinding.tvSubscription.text = subRemarks
             holder.itemMainBinding.layoutSubscription.visibility = if (subRemarks.isEmpty()) View.GONE else View.VISIBLE
 
-            //layout
-            if (doubleColumnDisplay) {
-                holder.itemMainBinding.layoutShare.visibility = View.GONE
-                holder.itemMainBinding.layoutEdit.visibility = View.GONE
-                holder.itemMainBinding.layoutRemove.visibility = View.GONE
-                holder.itemMainBinding.layoutMore.visibility = View.VISIBLE
-
-                //share method
-                val shareOptions = if (isCustom) share_method_more.asList().takeLast(3) else share_method_more.asList()
-
-                holder.itemMainBinding.layoutMore.setOnClickListener {
-                    shareServer(guid, profile, position, shareOptions, if (isCustom) 2 else 0)
-                }
-            } else {
-                holder.itemMainBinding.layoutShare.visibility = View.VISIBLE
-                holder.itemMainBinding.layoutEdit.visibility = View.VISIBLE
-                holder.itemMainBinding.layoutRemove.visibility = View.VISIBLE
-                holder.itemMainBinding.layoutMore.visibility = View.GONE
-
-                //share method
-                val shareOptions = if (isCustom) share_method.asList().takeLast(1) else share_method.asList()
-
-                holder.itemMainBinding.layoutShare.setOnClickListener {
-                    shareServer(guid, profile, position, shareOptions, if (isCustom) 2 else 0)
-                }
-
-                holder.itemMainBinding.layoutEdit.setOnClickListener {
-                    editServer(guid, profile)
-                }
-                holder.itemMainBinding.layoutRemove.setOnClickListener {
-                    removeServer(guid, position)
-                }
-            }
-
+            // Select server by tapping the item
             holder.itemMainBinding.infoContainer.setOnClickListener {
                 setSelectServer(guid)
             }
