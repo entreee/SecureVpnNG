@@ -341,6 +341,7 @@
         <item>Экспорт в буфер обмена</item>
         <item>Экспорт всей конфигурации в буфер обмена</item>
     </string-array>
+    <string name="add_subscription">Добавить подписку</string>
 
     <string-array name="share_method_more">
         <item>QR-код</item>

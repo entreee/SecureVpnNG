@@ -90,7 +90,7 @@
             android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_weight="1"
-            android:text="Clipboard"
+            android:text="@string/menu_item_import_config_clipboard"
             android:textAllCaps="false"
             android:textColor="@color/text_primary"
             app:strokeColor="@color/my_neon_green"
@@ -99,7 +99,25 @@
             android:backgroundTint="@android:color/transparent" />
 
         <Space
-            android:layout_width="16dp"
+            android:layout_width="12dp"
+            android:layout_height="1dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_add_subscription"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:text="@string/add_subscription"
+            android:textAllCaps="false"
+            android:textColor="@color/text_primary"
+            app:strokeColor="@color/my_neon_green"
+            app:strokeWidth="1dp"
+            app:rippleColor="@color/my_neon_green"
+            android:backgroundTint="@android:color/transparent" />
+
+        <Space
+            android:layout_width="12dp"
             android:layout_height="1dp" />
 
         <com.google.android.material.button.MaterialButton
@@ -108,7 +126,7 @@
             android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_weight="1"
-            android:text="QR-Code"
+            android:text="@string/menu_item_import_config_qrcode"
             android:textAllCaps="false"
             android:textColor="@color/text_primary"
             app:strokeColor="@color/my_neon_green"

@@ -345,6 +345,7 @@
         <item>Export to clipboard</item>
         <item>Export full configuration to clipboard</item>
     </string-array>
+    <string name="add_subscription">Add subscription</string>
 
     <string-array name="share_method_more">
         <item>QRcode</item>
