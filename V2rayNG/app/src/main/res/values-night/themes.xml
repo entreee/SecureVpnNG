@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="AppThemeDayNight" parent="Theme.AppCompat.DayNight.DarkActionBar">
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimary</item>
-        <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:statusBarColor">@color/colorPrimary</item>
-        <item name="android:navigationBarColor">@android:color/transparent</item>
-        <item name="colorControlNormal">@color/colorAccent</item>
+    <!-- Secure.VPN dark-only Material 3 theme (night) -->
+    <style name="AppThemeDayNight" parent="Theme.Material3.Dark">
+        <item name="colorPrimary">@color/my_neon_green</item>
+        <item name="colorSecondary">@color/my_neon_green_dark</item>
+        <item name="android:statusBarColor">@color/bg_dark</item>
+        <item name="android:navigationBarColor">@color/bg_dark</item>
+        <item name="colorControlNormal">@color/my_neon_green</item>
+        <item name="android:fontFamily">@font/inter</item>
+        <item name="fontFamily">@font/inter</item>
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
     </style>
 
 </resources>
