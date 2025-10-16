@@ -133,8 +133,11 @@ class MainActivity : BaseActivity() {
         // Current server selector
         binding.tvCurrentServer.setOnClickListener { showServerPicker() }
 
-        // Bottom actions: Clipboard / QR
+        // Bottom actions: Clipboard / Add Subscription / QR
         binding.btnClipboard.setOnClickListener { importClipboard() }
+        binding.btnAddSubscription.setOnClickListener {
+            startActivity(Intent(this, SubSettingActivity::class.java))
+        }
         binding.btnQrcode.setOnClickListener { importQRcode() }
 
         setupViewModel()
